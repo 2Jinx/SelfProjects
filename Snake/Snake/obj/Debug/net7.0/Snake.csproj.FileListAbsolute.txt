@@ -1,0 +1,15 @@
+/Users/jinx/Projects/Snake/Snake/obj/Debug/net7.0/Snake.csproj.AssemblyReference.cache
+/Users/jinx/Projects/Snake/Snake/obj/Debug/net7.0/Snake.GeneratedMSBuildEditorConfig.editorconfig
+/Users/jinx/Projects/Snake/Snake/obj/Debug/net7.0/Snake.AssemblyInfoInputs.cache
+/Users/jinx/Projects/Snake/Snake/obj/Debug/net7.0/Snake.AssemblyInfo.cs
+/Users/jinx/Projects/Snake/Snake/obj/Debug/net7.0/Snake.csproj.CoreCompileInputs.cache
+/Users/jinx/Projects/Snake/Snake/bin/Debug/net7.0/Snake
+/Users/jinx/Projects/Snake/Snake/bin/Debug/net7.0/Snake.deps.json
+/Users/jinx/Projects/Snake/Snake/bin/Debug/net7.0/Snake.runtimeconfig.json
+/Users/jinx/Projects/Snake/Snake/bin/Debug/net7.0/Snake.dll
+/Users/jinx/Projects/Snake/Snake/bin/Debug/net7.0/Snake.pdb
+/Users/jinx/Projects/Snake/Snake/obj/Debug/net7.0/Snake.dll
+/Users/jinx/Projects/Snake/Snake/obj/Debug/net7.0/refint/Snake.dll
+/Users/jinx/Projects/Snake/Snake/obj/Debug/net7.0/Snake.pdb
+/Users/jinx/Projects/Snake/Snake/obj/Debug/net7.0/Snake.genruntimeconfig.cache
+/Users/jinx/Projects/Snake/Snake/obj/Debug/net7.0/ref/Snake.dll
