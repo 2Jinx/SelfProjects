@@ -1,0 +1,15 @@
+/Users/jinx/Projects/Pong/Pong/bin/Debug/net7.0/Pong
+/Users/jinx/Projects/Pong/Pong/bin/Debug/net7.0/Pong.deps.json
+/Users/jinx/Projects/Pong/Pong/bin/Debug/net7.0/Pong.runtimeconfig.json
+/Users/jinx/Projects/Pong/Pong/bin/Debug/net7.0/Pong.dll
+/Users/jinx/Projects/Pong/Pong/bin/Debug/net7.0/Pong.pdb
+/Users/jinx/Projects/Pong/Pong/obj/Debug/net7.0/Pong.csproj.AssemblyReference.cache
+/Users/jinx/Projects/Pong/Pong/obj/Debug/net7.0/Pong.GeneratedMSBuildEditorConfig.editorconfig
+/Users/jinx/Projects/Pong/Pong/obj/Debug/net7.0/Pong.AssemblyInfoInputs.cache
+/Users/jinx/Projects/Pong/Pong/obj/Debug/net7.0/Pong.AssemblyInfo.cs
+/Users/jinx/Projects/Pong/Pong/obj/Debug/net7.0/Pong.csproj.CoreCompileInputs.cache
+/Users/jinx/Projects/Pong/Pong/obj/Debug/net7.0/Pong.dll
+/Users/jinx/Projects/Pong/Pong/obj/Debug/net7.0/refint/Pong.dll
+/Users/jinx/Projects/Pong/Pong/obj/Debug/net7.0/Pong.pdb
+/Users/jinx/Projects/Pong/Pong/obj/Debug/net7.0/Pong.genruntimeconfig.cache
+/Users/jinx/Projects/Pong/Pong/obj/Debug/net7.0/ref/Pong.dll
