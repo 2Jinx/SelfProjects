@@ -6,7 +6,7 @@ class Program
         try
         {
             PongGame p = new PongGame();
-            p.Game();
+            p.Menu();
         }
         catch(Exception ex)
         {
