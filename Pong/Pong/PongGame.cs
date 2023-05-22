@@ -5,7 +5,7 @@ using System.Xml.Linq;
 
 namespace Pong
 {
-    public class PongGame
+    internal class PongGame
     {
         protected char[,] field;
         protected char[,] menu;
@@ -190,9 +190,16 @@ namespace Pong
         /// </summary>
         private void MultiplayerGame()
         {
-            int i = 0;
             FillTheField(field);
             PrintField();
+            leftRacketX = 5;
+            leftRacketY = 12;
+            rightRacketX = 74;
+            rightRacketY = 12;
+            rightRacketSpeedY = 0;
+            leftRacketSpeedY = 0;
+            ballX = 39;
+            ballY = 12;
             firstPlayerPoints = 0;
             secondPlayerPoints = 0;
             
@@ -204,7 +211,6 @@ namespace Pong
                 field[ballY + ballSpeedY, ballX + ballSpeedX] = cur;
                 Console.Clear();
                 PrintField();
-                i++;
 
                 Thread.Sleep(gameSpeed);
 
@@ -224,14 +230,21 @@ namespace Pong
                 }
             }
 
+            string win = "";
             if ((firstPlayerPoints == 7 || secondPlayerPoints == 7) && firstPlayerPoints > secondPlayerPoints)
             {
-                Console.WriteLine(" GAME OVER! FIRST PLAYER WON!");
+                win = "GAME OVER! FIRST PLAYER WON!";
             }
             else if ((firstPlayerPoints == 7 || secondPlayerPoints == 7) && firstPlayerPoints < secondPlayerPoints)
             {
-                Console.WriteLine(" GAME OVER! SECOND PLAYER WON!");
+                win = "GAME OVER! SECOND PLAYER WON!";
             }
+            for (int i = 0; i < win.Length; i++)
+            {
+                field[20, 27 + i] = win[i];
+            }
+            Console.Clear();
+            PrintField();
         }
         /// <summary>
         /// Навигация по меню
@@ -281,7 +294,7 @@ namespace Pong
                 }
                 Console.Clear();
                 Print(menu);
-                Thread.Sleep(80);
+                Thread.Sleep(60);
 
                 if (Console.KeyAvailable)
                 {
@@ -352,7 +365,7 @@ namespace Pong
                 
                 Console.Clear();
                 Print(menu);
-                Thread.Sleep(80);
+                Thread.Sleep(60);
 
                 if (Console.KeyAvailable)
                 {
@@ -379,8 +392,85 @@ namespace Pong
         /// </summary>
         private void SinglePlayer()
         {
-            //TODO
-            Console.WriteLine("good choice!");
+            FillTheField(field);
+            PrintField();
+            leftRacketX = 5;
+            leftRacketY = 12;
+            rightRacketX = 74;
+            rightRacketY = 12;
+            rightRacketSpeedY = 0;
+            leftRacketSpeedY = 0;
+            ballX = 39;
+            ballY = 12;
+            firstPlayerPoints = 0;
+            secondPlayerPoints = 0;
+
+            while (firstPlayerPoints != 7 && secondPlayerPoints != 7)
+            {
+                Collision();
+                char cur = field[ballY, ballX];
+                field[ballY, ballX] = field[ballY + ballSpeedY, ballX + ballSpeedX];
+                field[ballY + ballSpeedY, ballX + ballSpeedX] = cur;
+                Console.Clear();
+                PrintField();
+
+                Thread.Sleep(gameSpeed);
+
+                ballX += ballSpeedX;
+                ballY += ballSpeedY;
+
+                if (Console.KeyAvailable)
+                {
+                    var key = Console.ReadKey();
+                    if (key.Key == ConsoleKey.UpArrow && rightRacketY > 2)
+                    {
+                        rightRacketSpeedY = -1;
+                    }
+                    if (key.Key == ConsoleKey.DownArrow && rightRacketY < 22)
+                    {
+                        rightRacketSpeedY = 1;
+                    }
+                    if (key.Key == ConsoleKey.Escape)
+                    {
+                        Console.Clear();
+                        Menu();
+                        break;
+                    }
+                }
+
+                //AI
+                if (leftRacketY < ballY && leftRacketY > 2 && ballX < 40)
+                {
+                    leftRacketSpeedY = -1;
+                }
+                else if (leftRacketY > ballY && leftRacketY < 22 && ballX < 40)
+                {
+                    leftRacketSpeedY = 1;
+                }
+                //
+
+                rightRacketY += rightRacketSpeedY;
+                leftRacketY += leftRacketSpeedY;
+
+                rightRacketSpeedY = 0;
+                leftRacketSpeedY = 0;
+            }
+
+            string win = "";
+            if ((firstPlayerPoints == 7 || secondPlayerPoints == 7) && firstPlayerPoints > secondPlayerPoints)
+            {
+                win = "GAME OVER! AI WON!";
+            }
+            else if ((firstPlayerPoints == 7 || secondPlayerPoints == 7) && firstPlayerPoints < secondPlayerPoints)
+            {
+                win = "GAME OVER! YOU WON!";
+            }
+            for (int i = 0; i < win.Length; i++)
+            {
+                field[20, 27 + i] = win[i];
+            }
+            Console.Clear();
+            PrintField();
         }
         /// <summary>
         /// Авторы проекта
@@ -561,6 +651,9 @@ namespace Pong
                 Menu();
             }
         }
+        /// <summary>
+        /// Настройка скорости игры
+        /// </summary>
         private void ChangeTheGameSpeed()
         {
             string str1 = "SLOW";
